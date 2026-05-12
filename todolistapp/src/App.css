@@ -1,0 +1,429 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Science+Gothic:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: whitesmoke;
+  min-height: 100vh;
+  padding: 5px;
+}
+
+.todo-container {
+  max-width: 850px;
+  margin: auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.todo-title {
+  background: linear-gradient(135deg, #c93009, #f45928);
+  color: white;
+  text-align: center;
+  padding: 11px 24px;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.25);
+  position: relative;
+  overflow: hidden;
+  font-family: "Google Sans", sans-serif;
+}
+
+.todo-title::after {
+  content: "";
+  position: absolute;
+  left: -40%;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-25deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  100% {
+    left: 120%;
+  }
+}
+
+.todo-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 4px;
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px #ddd;
+}
+
+.todo-table thead {
+  background: black;
+  color: white;
+}
+
+.todo-table th {
+  padding: 10px 20px;
+  text-align: left;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.todo-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  font-size: 15px;
+}
+
+.todo-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.todo-table tbody tr:hover {
+  background: #eef2ff;
+  transform: scale(1.01);
+}
+
+.todo-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 20px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.todo-layout {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+}
+
+.todo-left {
+  flex: 2;
+}
+
+.todo-right {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #ddd;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.todo-right textarea, input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Focus Effect */
+.todo-right input:focus,
+.todo-right textarea:focus {
+  border-color: #2563eb;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* Textarea */
+.todo-right textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* Placeholder */
+.todo-right input::placeholder,
+.todo-right textarea::placeholder {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.todo-right button {
+      background: #f45928;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px #ffe6b866;
+    border: 1px solid #f45928;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+  
+}
+
+.todo-right button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(238, 140, 59, 0.35);
+}
+
+/* Actions Container */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Common Button Style */
+.action-buttons button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+/* Complete Button */
+.complete-btn {
+    background: #f45928;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px #ffe6b866;
+}
+
+.complete-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(238, 140, 59, 0.35);
+}
+
+/* Edit Button */
+.edit-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.12);
+  color: #2563eb;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-btn:hover {
+  background: #2563eb;
+  color: white;
+  transform: scale(1.08);
+}
+
+/* Delete Button */
+.delete-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(220, 38, 38, 0.12);
+  color: #dc2626;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+  color: white;
+  transform: scale(1.08);
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+
+  .todo-layout {
+    flex-direction: column;
+    padding: 20px;
+    gap: 25px;
+  }
+
+  .todo-container {
+    padding: 20px;
+  }
+
+  .todo-right {
+    width: 100%;
+  }
+
+  .todo-title {
+    font-size: 26px;
+    padding: 12px 18px;
+  }
+
+  .todo-table th,
+  .todo-table td {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .action-buttons {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .complete-btn {
+    padding: 7px 12px;
+    font-size: 14px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .todo-container {
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .todo-layout {
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .todo-title {
+    font-size: 22px;
+    padding: 12px;
+    margin-bottom: 20px;
+  }
+
+  .todo-right {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .todo-right h2 {
+    font-size: 22px;
+  }
+
+  .todo-right input,
+  .todo-right textarea {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .todo-right button {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  /* Table Scroll on Mobile */
+  .todo-left {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .todo-table {
+    min-width: 650px;
+  }
+
+  .todo-table th,
+  .todo-table td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .action-buttons {
+    gap: 6px;
+  }
+
+  .complete-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 480px) {
+
+  .todo-title {
+    font-size: 19px;
+    letter-spacing: 0.5px;
+  }
+
+  .todo-right {
+    padding: 15px;
+  }
+
+  .todo-right h2 {
+    font-size: 20px;
+  }
+
+  .todo-right input,
+  .todo-right textarea {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .todo-right button {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .complete-btn {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .todo-table th,
+  .todo-table td {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}
